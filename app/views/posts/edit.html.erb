@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="card col s12">
+            <div class="card-content">
+                <div class="card-title">수정하기</div>
+                <%= form_tag post_path(@post), method: "patch" do %>
+                    <div class="input-field">
+                        <textarea name="content"  id="textarea1" class="materialize-textarea"><%= @post.content %></textarea>
+                        <label for="textarea1">Textarea</label> 
+                        <input type="hidden" name="id" value="<%=@post.id%>">
+                    </div>
+                    
+                    <div class="input-field">
+                        <%= button_tag "수정하기", close: "btn" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
